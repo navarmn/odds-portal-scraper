@@ -17,6 +17,8 @@ class SoccerMatch():
         self.start = None
         self.team1 = ""
         self.team2 = ""
+        self.team1_score = ""
+        self.team2_score = ""
         self.team1_odds = ""
         self.team2_odds = ""
         self.draw_odds = ""
@@ -59,10 +61,16 @@ class SoccerMatch():
             self.outcome = "NONE"
         elif scores[0] > scores[1]:
             self.outcome = "TEAM1"
+            self.team1_score = "{}".format(scores[0])
+            self.team2_score = "{}".format(scores[1])
         elif scores[0] < scores[1]:
             self.outcome = "TEAM2"
+            self.team1_score = "{}".format(scores[0])
+            self.team2_score = "{}".format(scores[1])
         else:
             self.outcome = "DRAW"
+            self.team1_score = "{}".format(scores[0])
+            self.team2_score = "{}".format(scores[1])
 
     def set_odds(self, odds):
         """
@@ -121,6 +129,26 @@ class SoccerMatch():
         """
 
         return self.team2
+
+    def get_team1_score(self):
+        """
+        Get the SCORE of participating team 1.
+
+        Returns:
+            (str) Score of participating team 1.
+        """
+
+        return self.team1_score
+
+    def get_team2_score(self):
+        """
+        Get the SCORE of participating team 2.
+
+        Returns:
+            (str) Score of participating team 2.
+        """
+
+        return self.team2_score
 
     def get_team1_odds(self):
         """

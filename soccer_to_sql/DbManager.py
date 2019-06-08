@@ -31,6 +31,7 @@ class DatabaseManager():
                                     (league text, area text,
                                     retrieved_from_url text, start_time integer,
                                     end_time integer, team1 text, team2 text,
+                                    team1_score text, team2_score text,
                                     outcome text, team1_odds real,
                                     team2_odds real, draw_odds real)''')
             self.conn.commit()
@@ -55,6 +56,8 @@ class DatabaseManager():
         sql_str += str(match.get_end_time_unix_int()) + ", '"
         sql_str += match.get_team1_string() + "', '"
         sql_str += match.get_team2_string() + "', '"
+        sql_str += match.get_team1_score() + "', '"
+        sql_str += match.get_team2_score() + "', '"
         sql_str += match.get_outcome_string() + "', '"
         sql_str += str(match.get_team1_odds()) + "', '"
         sql_str += str(match.get_team2_odds()) + "', '"
