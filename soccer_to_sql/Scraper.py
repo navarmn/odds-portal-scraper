@@ -9,6 +9,7 @@ import re
 import time
 from selenium import webdriver
 from SoccerMatch import SoccerMatch
+import logging
 
 class Scraper():
 
@@ -54,6 +55,7 @@ class Scraper():
             output_str = "Start scraping " + self.league["league"] + " of "
             output_str += self.league["area"] + "..."
             print(output_str)
+            logging.debug(" {} \n".format(output_str))
 
         for url in self.league["urls"]:
             # loop through all pages in that season
