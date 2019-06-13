@@ -33,7 +33,7 @@ all_teams = np.unique(all_teams)
 # tf_02 = GetOdds()
 # print(tf_02.fit_transform(data['team1_odds']))
 
-# Create pípelines
+# Create pipelines
 
 num_attribs = ['team1_odds', 'team2_odds', 'draw_odds']
 cat_attribs = ['team1', 'team2']
